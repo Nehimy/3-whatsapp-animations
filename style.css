@@ -1,0 +1,118 @@
+/*
+   El valor border-box en el box-sizing hace que el padding y el border pasen a formar parte
+   del cálculo del ancho de la caja.
+ */
+
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.matriz {
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+    grid-column: 1;
+    grid-row: 1;
+    z-index: 1;
+}
+
+.circle {
+    background: #40c251;
+    border-radius:50%;
+    width: 100px;
+    height: 100px;
+    opacity: 0;
+    grid-column: 1;
+    grid-row: 1;
+    animation: 1.7s wave infinite;
+}
+
+
+.container-whatsapp-01, .container-whatsapp-02, .container-whatsapp-03 {
+    display: grid;
+    place-content: center;
+    width: 300px;
+    height: 300px;
+}
+
+.container-whatsapp-02:before, .container-whatsapp-02:after {
+    content: "";
+    background: #40c251;
+    border-radius:50%;
+    width: 100px;
+    height: 100px;
+    top: 438px;
+    left: 100px;
+    position: absolute;
+    animation: 1.7s wave infinite;
+}
+
+.container-whatsapp-02::before {
+    animation-delay: 1s;
+}
+
+.container-whatsapp-02::after {
+    animation-delay: 1.5s;
+}
+
+.container-whatsapp-03::after, .container-whatsapp-03::before {
+    content: "";
+    background: #40c251;
+    border-radius:50%;
+    width: 100px;
+    height: 100px;
+    top: 755px;
+    left: 100px;
+    position: absolute;
+    animation: 1.7s wave-2 infinite;
+}
+
+.whatsapp-img {
+    animation: 1.7s scale-img infinite;
+    /* animation: 1.7s wave infinite; */
+}
+
+@keyframes scale-img {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes wave {
+    0% {
+        transform: scale(1);
+    }
+    15% {
+        opacity:1;
+    }
+    100% {
+        transform: scale(2);
+        opacity:0;
+    }
+}
+
+@keyframes wave-2 {
+    0% {
+        transform: scale(1);
+        opacity:1;
+    }
+    /* 15% { */
+
+    /* } */
+    100% {
+        transform: scale(1.6);
+        opacity:0;
+    }
+}
